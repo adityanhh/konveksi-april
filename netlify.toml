@@ -1,4 +1,6 @@
+# netlify.toml di ROOT repo (selevel folder konveksi-april)
 [build]
+  base = "konveksi-april"
   command = "npm run build"
   publish = ".next"
 
