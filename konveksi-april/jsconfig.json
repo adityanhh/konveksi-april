@@ -1,0 +1,13 @@
+// File: jsconfig.json (Di root proyek)
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    // Tambahkan baris ini untuk menghilangkan peringatan
+    "ignoreDeprecations": "6.0", 
+    "paths": {
+      // Alias Anda sudah benar, menunjuk ke sub-folder di dalam "src/"
+      "@/components/*": ["components/*"], 
+      "@/data/*": ["data/*"]
+    }
+  }
+}
