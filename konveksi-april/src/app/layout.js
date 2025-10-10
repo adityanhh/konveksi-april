@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'; // Penting!
 import Footer from '@/components/Footer';
+import GTM from '@/components/GTM'; // Penting!
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,6 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
+
+      <GTM />
+      
       <body className={inter.className}>
         <Navbar /> 
         <main className="min-h-screen">
