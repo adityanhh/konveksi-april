@@ -1,4 +1,4 @@
-import { services } from '@/data/services'; // Ambil data services lagi
+import { services } from '../components/services'; // Ambil data services lagi
 
 const LayananPage = () => {
   return (
