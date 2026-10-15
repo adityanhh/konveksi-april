@@ -11,13 +11,13 @@ const Navbar = () => {
         
         {/* Navigasi Utama (Hanya Tampil di Desktop) */}
         <div className="hidden md:flex space-x-6 items-center">
-          <Link href="/" className="text-gray-700 hover:text-indigo-600 font-medium transition duration-200">
+          <Link href="/galeri" className="text-gray-700 hover:text-indigo-600 font-medium transition duration-200">
             Galeri
           </Link>
-          <Link href="/" className="text-gray-700 hover:text-indigo-600 font-medium transition duration-200">
+          <Link href="/layanan" className="text-gray-700 hover:text-indigo-600 font-medium transition duration-200">
             Layanan
           </Link>
-          <Link href="/" className="text-gray-700 hover:text-indigo-600 font-medium transition duration-200">
+          <Link href="/kontak" className="text-gray-700 hover:text-indigo-600 font-medium transition duration-200">
             Kontak
           </Link>
           
