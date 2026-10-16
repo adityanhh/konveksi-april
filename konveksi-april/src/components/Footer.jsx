@@ -1,113 +1,152 @@
 import Link from 'next/link';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaFacebook } from 'react-icons/fa';
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaInstagram,
+  FaFacebook,
+  FaWhatsapp,
+  FaTshirt
+} from 'react-icons/fa';
 
-const Footer = () => {
+const WHATSAPP_NUMBER = '6285122909300';
+const EMAIL = 'aprilsmoon04@gmail.com';
+
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 pt-12 pb-8">
-        {/* 3 kolom (tanpa Produk) → auto “justify” di grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 border-b border-gray-800 pb-10">
-          {/* Contact */}
-          <div>
-            <h4 className="text-lg sm:text-xl font-bold mb-4 text-indigo-400">Hubungi Kami</h4>
-            <ul className="space-y-3 text-sm sm:text-base text-gray-300">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="mt-0.5 mr-3 flex-shrink-0 text-indigo-400" aria-hidden="true" />
-                <p className="leading-relaxed">
-                  Jl. Kencana Arum II No. 2, Cijawura, Buahbatu, Bandung, 40287
-                </p>
-              </li>
-              <li className="flex items-center">
-                <FaPhone className="mr-3 flex-shrink-0 text-indigo-400" aria-hidden="true" />
-                <a
-                  href="tel:+6285122909300"
-                  className="hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
-                >
-                  +62 851-2290-9300
-                </a>
-              </li>
-              <li className="flex items-center">
-                <FaEnvelope className="mr-3 flex-shrink-0 text-indigo-400" aria-hidden="true" />
-                <a
-                  href="mailto:aprilsmoon04@gmail.com"
-                  className="hover:text-white break-all md:break-normal focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
-                >
-                  aprilsmoon04@gmail.com
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Nav */}
-          <nav aria-label="Footer Navigasi" className="sm:justify-self-start lg:justify-self-center">
-            <h4 className="text-lg sm:text-xl font-bold mb-4 text-indigo-400">Navigasi</h4>
-            <ul className="space-y-2 text-sm sm:text-base">
-              <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-                  Beranda
-                </Link>
-              </li>
-              <li>
-                <Link href="/galeri" className="text-gray-300 hover:text-white transition-colors">
-                  Galeri Hasil Produksi
-                </Link>
-              </li>
-              <li>
-                <Link href="/layanan" className="text-gray-300 hover:text-white transition-colors">
-                  Layanan &amp; Proses Order
-                </Link>
-              </li>
-              <li>
-                <Link href="/kontak" className="text-gray-300 hover:text-white transition-colors">
-                  Kontak Kami
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* Social & Legal */}
-          <div className="sm:justify-self-start lg:justify-self-end">
-            <h4 className="text-lg sm:text-xl font-bold mb-4 text-indigo-400">Ikuti Kami</h4>
-            <div className="flex flex-wrap gap-4 mb-6">
+    <footer className="bg-slate-950 text-white border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 border-b border-slate-800/80 pb-12">
+          {/* Brand Info */}
+          <div className="space-y-4">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-600/30">
+                <FaTshirt className="text-lg" />
+              </div>
+              <span className="text-xl font-black tracking-tight text-white">
+                KONVEKSI<span className="text-indigo-400">APRIL</span>
+              </span>
+            </Link>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Pusat vendor produksi konveksi dan sablon terpercaya di Bandung. Melayani pembuatan kaos distro, kemeja PDL, polo shirt, dan hoodie dengan standar kualitas terbaik.
+            </p>
+            <div className="flex items-center gap-3 pt-2">
               <a
                 href="https://instagram.com/_aprilmoons"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-gray-300 hover:text-pink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500 rounded p-2 -m-2"
+                aria-label="Instagram Konveksi April"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-pink-400 hover:border-pink-500/50 flex items-center justify-center transition-all"
               >
-                <FaInstagram className="w-6 h-6" />
+                <FaInstagram className="text-base" />
               </a>
               <a
                 href="https://facebook.com/aprilmoons"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-gray-300 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 rounded p-2 -m-2"
+                aria-label="Facebook Konveksi April"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-blue-400 hover:border-blue-500/50 flex items-center justify-center transition-all"
               >
-                <FaFacebook className="w-6 h-6" />
+                <FaFacebook className="text-base" />
+              </a>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Konveksi April"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-500/50 flex items-center justify-center transition-all"
+              >
+                <FaWhatsapp className="text-base" />
               </a>
             </div>
-            <div className="space-y-2 text-sm sm:text-base text-gray-400">
-              <Link href="/syarat-ketentuan" className="hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
-                Syarat &amp; Ketentuan
-              </Link>
-              <br />
-              <Link href="/kebijakan-privasi" className="hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
-                Kebijakan Privasi
-              </Link>
-            </div>
+          </div>
+
+          {/* Quick Nav */}
+          <div>
+            <h4 className="text-sm font-bold tracking-wider uppercase text-indigo-400 mb-4">
+              Navigasi Halaman
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+              <li>
+                <Link href="/" className="hover:text-white transition-colors">
+                  Beranda
+                </Link>
+              </li>
+              <li>
+                <Link href="/layanan" className="hover:text-white transition-colors">
+                  Produk &amp; Spesifikasi
+                </Link>
+              </li>
+              <li>
+                <Link href="/galeri" className="hover:text-white transition-colors">
+                  Galeri Portofolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/kontak" className="hover:text-white transition-colors">
+                  Kontak &amp; Lokasi Workshop
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Layanan Produk */}
+          <div>
+            <h4 className="text-sm font-bold tracking-wider uppercase text-indigo-400 mb-4">
+              Produk Utama
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+              <li>Kaos Combed 24s &amp; 30s Distro</li>
+              <li>Polo Shirt Lacoste Pique &amp; CVC</li>
+              <li>Kemeja PDL &amp; PDH Nagata Drill</li>
+              <li>Jaket Hoodie &amp; Crewneck Fleece</li>
+              <li>Jaket Bomber &amp; Varsity Custom</li>
+              <li>Topi Snapback &amp; Canvas Totebag</li>
+            </ul>
+          </div>
+
+          {/* Contact Details */}
+          <div>
+            <h4 className="text-sm font-bold tracking-wider uppercase text-indigo-400 mb-4">
+              Workshop Bandung
+            </h4>
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li className="flex items-start gap-2.5">
+                <FaMapMarkerAlt className="text-indigo-400 mt-1 flex-shrink-0" />
+                <span className="leading-relaxed">
+                  Jl. Kencana Arum II No. 2, Cijawura, Buahbatu, Bandung, Jawa Barat 40287
+                </span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <FaPhoneAlt className="text-indigo-400 flex-shrink-0" />
+                <a href="tel:+6285122909300" className="hover:text-white transition-colors">
+                  +62 851-2290-9300
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <FaEnvelope className="text-indigo-400 flex-shrink-0" />
+                <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors">
+                  {EMAIL}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-6 text-center text-xs sm:text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Konveksi April. All Rights Reserved.</p>
-          <p className="mt-1">Made with ❤️ by Digital Did Production</p>
+        {/* Bottom Sub-bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>&copy; {new Date().getFullYear()} Konveksi April Bandung. Hak Cipta Dilindungi.</p>
+          <div className="flex items-center gap-5">
+            <Link href="/syarat-ketentuan" className="hover:text-slate-300 transition-colors">
+              Syarat &amp; Ketentuan
+            </Link>
+            <span>•</span>
+            <Link href="/kebijakan-privasi" className="hover:text-slate-300 transition-colors">
+              Kebijakan Privasi
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

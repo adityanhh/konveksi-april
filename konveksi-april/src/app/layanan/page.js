@@ -1,40 +1,177 @@
-import { services } from '../../components/services'; // Ambil data services lagi
+import Image from 'next/image';
+import ServiceGrid from '@/components/ServiceGrid';
+import PriceEstimator from '@/components/PriceEstimator';
+import {
+  FaPaintBrush,
+  FaCogs,
+  FaCheckCircle,
+  FaShieldAlt,
+  FaWhatsapp,
+  FaTshirt
+} from 'react-icons/fa';
 
-const LayananPage = () => {
-  return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Proses Pemesanan & Layanan Kami</h1>
-      
-      <div className="max-w-4xl mx-auto space-y-12">
-        
-        {/* Detil Layanan */}
-        <section>
-            <h2 className="text-3xl font-bold text-indigo-700 mb-6">Jenis Produk yang Kami Kerjakan</h2>
-            <ul className="list-disc pl-5 text-lg space-y-2">
-                {services.map(s => (
-                    <li key={s.id} className="font-semibold">{s.title}: <span className="font-normal text-gray-600">{s.description}</span></li>
-                ))}
-            </ul>
-        </section>
+const WHATSAPP_NUMBER = '6285122909300';
 
-        {/* Proses Order */}
-        <section>
-            <h2 className="text-3xl font-bold text-indigo-700 mb-6">Tahapan Order Mudah</h2>
-            <ol className="space-y-4">
-                <li className="p-4 bg-gray-50 border-l-4 border-yellow-500 rounded-lg">
-                    <span className="font-bold text-xl">1. Konsultasi & Desain:</span> Kirimkan desain Anda atau konsultasikan ide Anda via WhatsApp.
-                </li>
-                <li className="p-4 bg-gray-50 border-l-4 border-yellow-500 rounded-lg">
-                    <span className="font-bold text-xl">2. Penawaran Harga:</span> Kami berikan *quote* harga dan estimasi waktu pengerjaan.
-                </li>
-                <li className="p-4 bg-gray-50 border-l-4 border-yellow-500 rounded-lg">
-                    <span className="font-bold text-xl">3. Produksi & Kirim:</span> Proses produksi dimulai setelah DP. Barang siap, pelunasan, lalu kirim!
-                </li>
-            </ol>
-        </section>
-      </div>
-    </div>
-  );
+const TECHNIQUES = [
+  {
+    title: 'Sablon DTF High-Definition',
+    desc: 'Teknologi cetak digital direct-to-film terbaru untuk detail grafis rumit, gradasi foto, dan jutaan warna dengan presisi mikron.',
+    durability: 'Sangat Tinggi (Tahan 50+ Cuci)',
+    bestFor: 'Desain foto, ilustrasi full color, gradasi warna',
+    image: '/images/workshop-sablon.jpg'
+  },
+  {
+    title: 'Sablon Plastisol Premium',
+    desc: 'Standar emas clothing distro Bandung. Berbahan dasar minyak (oil-based) yang elastis, warna solid pekat, dan tidak mudah retak.',
+    durability: 'Maksimal (Kualitas Distro Original)',
+    bestFor: 'Kaos distro, tipografi tebal, logo bold komunitas',
+    image: '/images/product-kaos.jpg'
+  },
+  {
+    title: 'Bordir Komputer Tajam',
+    desc: 'Menggunakan mesin bordir multi-head komputer dengan benang poliester mengkilap. Jahitan padat dan detail logo kecil terbaca jelas.',
+    durability: 'Permanen (Seumur Hidup Pakaian)',
+    bestFor: 'Logo kemeja PDL, polo shirt, jaket, topi',
+    image: '/images/product-kemeja.jpg'
+  },
+  {
+    title: 'Sablon Discharge (Cabut Warna)',
+    desc: 'Cat sablon yang meresap dan mengubah pigmen warna serat kain. Hasil sablon menyatu 100% tanpa terasa ada lapisan sablon saat disentuh.',
+    durability: 'Tinggi (Tanpa Lapisan Plastik)',
+    bestFor: 'Kaos katun gelap, sentuhan vintage lembut',
+    image: '/images/product-polo.jpg'
+  }
+];
+
+export const metadata = {
+  title: 'Layanan & Spesifikasi Produksi - Konveksi April Bandung',
+  description:
+    'Layanan produksi garmen lengkap di Bandung: Sablon DTF, Plastisol, Bordir Komputer, dan Jahit Rantai Standar Distro.',
 };
 
-export default LayananPage;
+export default function LayananPage() {
+  return (
+    <div className="space-y-16 sm:space-y-24 py-12 sm:py-16">
+      {/* 1. Header Hero */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 rounded-3xl p-8 sm:p-14 text-white relative overflow-hidden shadow-2xl border border-indigo-500/20">
+          <div className="relative z-10 max-w-3xl">
+            <span className="text-xs font-bold text-indigo-400 tracking-wider uppercase block mb-3">
+              Layanan Spesialisasi Garment
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6">
+              Teknologi Produksi &amp; Kustomisasi Pakaian Tanpa Batas
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+              Dari pemilihan gramasi kain, pembuatan pola custom, teknik sablon mutakhir, hingga finishing packing satuan. Kami memastikan pesanan Anda memenuhi standar clothing brand profesional.
+            </p>
+            <div className="flex flex-wrap gap-4 text-xs sm:text-sm font-semibold">
+              <span className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2">
+                <FaCheckCircle className="text-emerald-400" /> Standar Jahit Rantai &amp; Overdeck
+              </span>
+              <span className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2">
+                <FaCheckCircle className="text-emerald-400" /> Tinta Sablon Ramah Lingkungan
+              </span>
+              <span className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2">
+                <FaCheckCircle className="text-emerald-400" /> Steam Uap &amp; Quality Control
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Teknik Sablon & Bordir */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-bold text-indigo-600 tracking-wider uppercase block mb-2">
+            Pilihan Cetak Desain
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            Teknik Sablon &amp; Bordir Komputer Kami
+          </h2>
+          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+            Sesuaikan teknik sablon atau bordir dengan kebutuhan desain dan budget Anda.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {TECHNIQUES.map((tech, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-6 bg-slate-100">
+                  <Image
+                    src={tech.image}
+                    alt={tech.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  {tech.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  {tech.desc}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-slate-100 space-y-2 text-xs">
+                <div className="flex justify-between">
+                  <span className="text-slate-500 font-medium">Ketahanan:</span>
+                  <span className="font-bold text-indigo-700">{tech.durability}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-500 font-medium">Cocok Untuk:</span>
+                  <span className="font-semibold text-slate-800 text-right">{tech.bestFor}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. Katalog Produk Lengkap */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-bold text-indigo-600 tracking-wider uppercase block mb-2">
+            Pilihan Produk
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            Produk Pakaian yang Kami Kerjakan
+          </h2>
+        </div>
+
+        <ServiceGrid />
+      </section>
+
+      {/* 4. Interactive Cost Simulation */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <PriceEstimator />
+      </section>
+
+      {/* 5. CTA */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center">
+          <h2 className="text-2xl sm:text-3xl font-black mb-3">
+            Punya Permintaan Khusus atau Desain Sendiri?
+          </h2>
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+            Tim kami siap membantu merealisasikan pakaian impian Anda, mulai dari pemilihan bahan, pengukuran ukuran (size chart), hingga sampel fisik.
+          </p>
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Halo%20Konveksi%20April%2C%20saya%20ingin%20konsultasi%20desain%20dan%20permintaan%20khusus.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105"
+          >
+            <FaWhatsapp className="text-2xl" />
+            <span>Chat Langsung dengan Tim Produksi</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+}
