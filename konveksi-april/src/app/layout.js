@@ -34,6 +34,8 @@ export const metadata = {
   },
   icons: {
     icon: '/icon.svg',
+    shortcut: '/images/LogoApril.png',
+    apple: '/images/LogoApril.png',
   },
 };
 

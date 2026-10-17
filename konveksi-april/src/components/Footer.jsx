@@ -1,12 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
   FaInstagram,
   FaFacebook,
-  FaWhatsapp,
-  FaTshirt
+  FaWhatsapp
 } from 'react-icons/fa';
 
 const WHATSAPP_NUMBER = '6285122909300';
@@ -20,8 +20,14 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-600/30">
-                <FaTshirt className="text-lg" />
+              <div className="relative h-10 w-10 flex-shrink-0 flex items-center justify-center">
+                <Image
+                  src="/images/LogoApril.png"
+                  alt="Logo Konveksi April"
+                  width={40}
+                  height={40}
+                  className="object-contain w-full h-full"
+                />
               </div>
               <span className="text-xl font-black tracking-tight text-white">
                 KONVEKSI<span className="text-indigo-400">APRIL</span>

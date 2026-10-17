@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#3730a3"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Badge -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Inner Border -->
+  <rect x="20" y="20" width="472" height="472" rx="112" fill="none" stroke="#818cf8" stroke-width="8" stroke-opacity="0.3"/>
+  
+  <!-- Elegant "AM" Monogram Typography -->
+  <g fill="#ffffff" text-anchor="middle" font-family="'Times New Roman', Times, 'Cinzel', 'Playfair Display', Georgia, serif">
+    <text x="256" y="325" font-size="210" font-weight="bold" letter-spacing="4">AM</text>
+  </g>
+  
+  <!-- Modern Crescent / Moon Insignia for April Moons -->
+  <circle cx="395" cy="135" r="30" fill="url(#goldGrad)"/>
+  <circle cx="406" cy="126" r="24" fill="#3b359d"/>
+  
+  <!-- Sub-label -->
+  <text x="256" y="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="#a5b4fc" letter-spacing="9" text-anchor="middle">APRIL</text>
+</svg>

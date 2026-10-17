@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import ServiceGrid from '@/components/ServiceGrid';
 import PriceEstimator from '@/components/PriceEstimator';
@@ -6,6 +5,8 @@ import FabricGuide from '@/components/FabricGuide';
 import ProcessSteps from '@/components/ProcessSteps';
 import Testimonials from '@/components/Testimonials';
 import LocationMap from '@/components/LocationMap';
+import HeroBackgroundSlider from '@/components/HeroBackgroundSlider';
+import TrustBadge from '@/components/TrustBadge';
 import {
   FaWhatsapp,
   FaCheckCircle,
@@ -17,34 +18,18 @@ import {
   FaArrowRight
 } from 'react-icons/fa';
 
-const HERO_IMAGE_PATH = '/images/hero-garment.jpg';
 const WHATSAPP_NUMBER = '6285122909300';
 
 function HeroSection() {
   return (
     <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center bg-slate-950 text-white overflow-hidden">
-      {/* Background Image with Depth & Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={HERO_IMAGE_PATH}
-          alt="Studio Workshop Konveksi April Bandung"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          className="object-cover object-center opacity-35 transform scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-      </div>
+      {/* Background Image Crossfade Slider with Opacity & Gradient Overlays */}
+      <HeroBackgroundSlider />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 w-full">
         <div className="max-w-3xl">
-          {/* Location & Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/20 backdrop-blur-md border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-bold tracking-wide uppercase mb-6 animate-pulse">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>Konveksi Pakaian Berkualitas </span>
-          </div>
+          {/* Location & Trust Badge with rotating word */}
+          <TrustBadge />
 
           {/* Punchy Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.15] mb-6">
@@ -56,19 +41,19 @@ function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-normal mb-8 max-w-2xl">
-            Solusi vendor garmen terpercaya untuk brand clothing, seragam kantor, instansi, event kampus, dan komunitas. Jahitan rapi, bahan Grade A, dan garansi tepat waktu.
+            Solusi vendor garmen terpercaya untuk brand clothing, seragam kantor, instansi, event kampus, dan komunitas. Berbagai Varian Pakaian, Jahitan rapi, dan garansi tepat waktu.
           </p>
 
           {/* Value Props Pills */}
           <div className="flex flex-wrap gap-y-2 gap-x-4 text-xs sm:text-sm text-slate-300 mb-10">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <FaCheckCircle className="text-emerald-400" />
               <span>Min. Order 24 Pcs</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </div> */}
+            {/* <div className="flex items-center gap-2">
               <FaCheckCircle className="text-emerald-400" />
               <span>Free Desain Mockup 2D</span>
-            </div>
+            </div> */}
             <div className="flex items-center gap-2">
               <FaCheckCircle className="text-emerald-400" />
               <span>Kapasitas 10.000+ Pcs/Bulan</span>
@@ -88,7 +73,7 @@ function HeroSection() {
               className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-extrabold text-white bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-xl shadow-emerald-600/30 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center"
             >
               <FaWhatsapp className="text-2xl" />
-              <span>Konsultasi &amp; Dapatkan Mockup</span>
+              <span>Dapatkan Penawaran Harga</span>
             </a>
 
             <a
@@ -107,7 +92,7 @@ function HeroSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-4 gap-6 text-center">
             <div>
-              <span className="block text-2xl font-black text-indigo-400">50.000+</span>
+              <span className="block text-2xl font-black text-indigo-400">100.000+</span>
               <span className="text-xs text-slate-400 font-medium">Pcs Pakaian Diproduksi</span>
             </div>
             <div>
@@ -115,7 +100,7 @@ function HeroSection() {
               <span className="text-xs text-slate-400 font-medium">Brand &amp; Instansi Puas</span>
             </div>
             <div>
-              <span className="block text-2xl font-black text-amber-400">7 - 12 Hari</span>
+              <span className="block text-2xl font-black text-amber-400">7 - 14 Hari</span>
               <span className="text-xs text-slate-400 font-medium">Waktu Pengerjaan Cepat</span>
             </div>
             <div>
@@ -153,9 +138,9 @@ export default function HomePage() {
       </section>
 
       {/* 3. Interactive Price Estimator Simulator */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <PriceEstimator />
-      </section>
+      </section> */}
 
       {/* 4. Fabric & Material Guide */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

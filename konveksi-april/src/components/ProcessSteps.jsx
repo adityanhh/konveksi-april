@@ -4,8 +4,8 @@ const STEPS = [
   {
     num: '01',
     icon: FaDraftingCompass,
-    title: 'Konsultasi & Mockup Gratis',
-    desc: 'Kirimkan ide, sketsa, atau file logo Anda. Tim desainer kami buatkan simulasi mockup digital tampak depan & belakang secara gratis.'
+    title: 'Konsultasi Produk',
+    desc: 'Kirimkan ide, sketsa, atau file produk Anda. Tim kami buatkan simulasi mockup digital tampak depan & belakang secara gratis.'
   },
   {
     num: '02',

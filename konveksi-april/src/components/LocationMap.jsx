@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaClock, FaDirections, FaWhatsapp } from 'react-icons/f
 const ADDRESS = "Jl. Kencana Arum II No. 2, Cijawura, Kec. Buahbatu, Kota Bandung, Jawa Barat 40287";
 const MAPS_EMBED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.312984950069!2d107.64448537500589!3d-6.973493793026852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9903a48e895%3A0x6e26715b7410006!2sJl.%20Kencana%20Arum%20II%20No.2%2C%20Cijawura%2C%20Kec.%20Buahbatu%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040287!5e0!3m2!1sid!2sid!4v1699700000000!5m2!1sid!2sid";
-const OPERATIONAL_HOURS = "Senin - Sabtu: 09:00 - 19:30 WIB";
+const OPERATIONAL_HOURS = "Senin - Sabtu: 09:00 - 21:00 WIB";
 const WHATSAPP_NUMBER = "6285122909300";
 
 export default function LocationMap() {

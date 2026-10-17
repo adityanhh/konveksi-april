@@ -14,32 +14,32 @@ const WHATSAPP_NUMBER = '6285122909300';
 
 const TECHNIQUES = [
   {
-    title: 'Sablon DTF High-Definition',
-    desc: 'Teknologi cetak digital direct-to-film terbaru untuk detail grafis rumit, gradasi foto, dan jutaan warna dengan presisi mikron.',
-    durability: 'Sangat Tinggi (Tahan 50+ Cuci)',
-    bestFor: 'Desain foto, ilustrasi full color, gradasi warna',
-    image: '/images/workshop-sablon.jpg'
+    title: 'Sablon Plastisol & DTF High-Density',
+    desc: 'Standar emas clothing distro Bandung. Hasil cetak warna solid, tajam dengan presisi mikron, elastis, dan tahan puluhan kali siklus cuci.',
+    durability: 'Maksimal (Standar Distro Original)',
+    bestFor: 'Kaos distro, tipografi tebal, grafis streetwear',
+    image: '/images/Kaos.jpeg'
   },
   {
-    title: 'Sablon Plastisol Premium',
-    desc: 'Standar emas clothing distro Bandung. Berbahan dasar minyak (oil-based) yang elastis, warna solid pekat, dan tidak mudah retak.',
-    durability: 'Maksimal (Kualitas Distro Original)',
-    bestFor: 'Kaos distro, tipografi tebal, logo bold komunitas',
-    image: '/images/product-kaos.jpg'
-  },
-  {
-    title: 'Bordir Komputer Tajam',
-    desc: 'Menggunakan mesin bordir multi-head komputer dengan benang poliester mengkilap. Jahitan padat dan detail logo kecil terbaca jelas.',
+    title: 'Bordir Komputer Presisi Tinggi',
+    desc: 'Menggunakan mesin bordir multi-head komputer berteknologi modern dengan benang poliester mengkilap. Jahitan padat dan logo kecil terbaca tajam.',
     durability: 'Permanen (Seumur Hidup Pakaian)',
-    bestFor: 'Logo kemeja PDL, polo shirt, jaket, topi',
-    image: '/images/product-kemeja.jpg'
+    bestFor: 'Logo kemeja PDL, seragam kantor, polo shirt',
+    image: '/images/KemejaForte.jpeg'
   },
   {
-    title: 'Sablon Discharge (Cabut Warna)',
-    desc: 'Cat sablon yang meresap dan mengubah pigmen warna serat kain. Hasil sablon menyatu 100% tanpa terasa ada lapisan sablon saat disentuh.',
-    durability: 'Tinggi (Tanpa Lapisan Plastik)',
-    bestFor: 'Kaos katun gelap, sentuhan vintage lembut',
-    image: '/images/product-polo.jpg'
+    title: 'Bordir Chenille & Patch Varsity',
+    desc: 'Aplikasi bordir handuk/timbul bertekstur empuk ala jaket varsity collegiate Amerika, dipadu bordir laken dan patch bendera/insignia.',
+    durability: 'Sangat Tinggi & Mewah',
+    bestFor: 'Jaket varsity, outerwear baseball, bomber',
+    image: '/images/Varsity.jpeg'
+  },
+  {
+    title: 'Full Print Sublimation Digital',
+    desc: 'Teknologi transfer panas resolusi tinggi yang meresap ke dalam pori-pori kain dry-fit. Tidak menutup sirkulasi udara dan warna tidak luntur.',
+    durability: 'Menyatu dengan Kain (Anti Pecah)',
+    bestFor: 'Jersey olahraga, jersey batik, motif custom',
+    image: '/images/Jersey.jpeg'
   }
 ];
 

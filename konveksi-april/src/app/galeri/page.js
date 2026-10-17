@@ -3,110 +3,114 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { FaWhatsapp, FaSearchPlus, FaTag, FaTshirt } from 'react-icons/fa';
+import ImageLightbox from '@/components/ImageLightbox';
 
 const WHATSAPP_NUMBER = '6285122909300';
 
-const GALLERY_CATEGORIES = ['Semua', 'Kaos Distro', 'Kemeja & PDL', 'Jaket & Hoodie', 'Polo & Jersey', 'Aksesoris'];
-
-const PROJECTS = [
-  {
-    id: 1,
-    title: 'Kaos Heavyweight 20s - Nocturnal Club',
-    category: 'Kaos Distro',
-    image: '/images/product-kaos.jpg',
-    client: 'Brand Clothing Lokal Bandung',
-    qty: '150 Pcs',
-    material: 'Cotton Combed 20s Solid Black',
-    print: 'Sablon Plastisol Doff High Density'
-  },
-  {
-    id: 2,
-    title: 'Kemeja PDL Lapangan - Geologist Corp',
-    category: 'Kemeja & PDL',
-    image: '/images/product-kemeja.jpg',
-    client: 'Divisi Eksplorasi Tambang',
-    qty: '85 Pcs',
-    material: 'Nagata Drill Khaki & Navy',
-    print: 'Bordir Komputer 4 Titik + Scotlight'
-  },
-  {
-    id: 3,
-    title: 'Varsity Jacket & Bomber - Apex Speed',
-    category: 'Jaket & Hoodie',
-    image: '/images/product-bomber.jpg',
-    client: 'Komunitas Otomotif Jawa Barat',
-    qty: '60 Pcs',
-    material: 'Taslan Milky Waterproof + Furing Quilting',
-    print: 'Bordir Timbul Chenille Patch'
-  },
-  {
-    id: 4,
-    title: 'Hoodie Fleece Streetwear - Overcast',
-    category: 'Jaket & Hoodie',
-    image: '/images/product-hoodie.jpg',
-    client: 'Distro Apparel Skateboard',
-    qty: '120 Pcs',
-    material: 'Cotton Fleece 330 gsm Heather Grey',
-    print: 'Sablon DTF High-Definition Dada & Punggung'
-  },
-  {
-    id: 5,
-    title: 'Polo Shirt Executive - Bank Mandiri Regional',
-    category: 'Polo & Jersey',
-    image: '/images/product-polo.jpg',
-    client: 'Corporate Gathering Mandiri',
-    qty: '200 Pcs',
-    material: 'Lacoste CVC Pique Navy Blue',
-    print: 'Bordir Komputer Tajam Dada Kiri'
-  },
-  {
-    id: 6,
-    title: 'Jersey Printing Sublim - Garuda FC',
-    category: 'Polo & Jersey',
-    image: '/images/product-jersey.jpg',
-    client: 'Klub Sepakbola Amatir Bandung',
-    qty: '35 Set',
-    material: 'Dryfit Milano Anti-UV',
-    print: 'Full Print Sublimation Warna Tajam'
-  },
-  {
-    id: 7,
-    title: 'Snapback Cap & Canvas Tote - Artfest Bandung',
-    category: 'Aksesoris',
-    image: '/images/product-topi.jpg',
-    client: 'Panitia Festival Seni & Budaya',
-    qty: '300 Pcs',
-    material: 'Rafael Daimaru & Canvas Marsoto',
-    print: 'Bordir 3D & Sablon Rubber'
-  },
-  {
-    id: 8,
-    title: 'Totebag Eco Canvas - Kedai Kopi Sore',
-    category: 'Aksesoris',
-    image: '/images/product-totebag.jpg',
-    client: 'Merchandise Coffee Shop',
-    qty: '100 Pcs',
-    material: 'Canvas Greige Tebal 14oz',
-    print: 'Sablon Rubber Ramah Lingkungan'
-  },
-  {
-    id: 9,
-    title: 'Kaos Komunitas Motor - Ride & Roll',
-    category: 'Kaos Distro',
-    image: '/images/workshop-sablon.jpg',
-    client: 'Komunitas Bikers Bandung',
-    qty: '180 Pcs',
-    material: 'Cotton Combed 24s Charcoal',
-    print: 'Sablon Plastisol Multi-Warna'
-  }
-];
+const GALLERY_CATEGORIES = ['Semua', 'Kaos Distro', 'Kemeja & Rompi', 'Jaket & Safety', 'Polo & Jersey'];
+ 
+ const PROJECTS = [
+   {
+     id: 1,
+     title: 'Kaos Distro Heavyweight 24s - FRUTELLA',
+     category: 'Kaos Distro',
+     image: '/images/Kaos.jpeg',
+     client: 'Clothing Brand / Streetwear',
+     qty: '120 Pcs',
+     material: 'Cotton Combed 24s Jet Black',
+     print: 'Sablon High-Density Plastisol Timbul'
+   },
+   {
+     id: 2,
+     title: 'Kemeja Kerja Korporat - iFORTE',
+     category: 'Kemeja & Rompi',
+     image: '/images/KemejaForte.jpeg',
+     client: 'iFORTE (PT Solusi Tunas Pratama)',
+     qty: '250 Pcs',
+     material: 'Nagata Drill Premium Navy & Sky Blue',
+     print: 'Full Bordir Komputer Logo Dada & Lengan'
+   },
+   {
+     id: 3,
+     title: 'Kemeja PDL Komunitas - UNDERDOG',
+     category: 'Kemeja & Rompi',
+     image: '/images/KemejaKomunitas.jpeg',
+     client: 'Underdog Community & Organisasi',
+     qty: '85 Pcs',
+     material: 'American Drill 1919 Solid Black',
+     print: 'Bordir Komputer Presisi Punggung & Dada'
+   },
+   {
+     id: 4,
+     title: 'Polo Shirt Wangki - Urban Bay Parking',
+     category: 'Polo & Jersey',
+     image: '/images/PoloHijau.jpeg',
+     client: 'Urban Bay Parking Management',
+     qty: '160 Pcs',
+     material: 'Lacoste Pique CVC Forest Green & Lime',
+     print: 'Bordir Komputer Tajam Dada Kiri'
+   },
+   {
+     id: 5,
+     title: 'Polo Shirt Two-Tone Executive - White & Emerald',
+     category: 'Polo & Jersey',
+     image: '/images/PoloPutihIjo.jpeg',
+     client: 'Corporate Gathering & Club Golf',
+     qty: '100 Pcs',
+     material: 'Lacoste Cotton CVC White w/ Emerald Collar',
+     print: 'Kerah Rib Rajut Custom + Bordir'
+   },
+   {
+     id: 6,
+     title: 'Varsity Jacket Baseball - Wirahebat Batch 5',
+     category: 'Jaket & Safety',
+     image: '/images/Varsity.jpeg',
+     client: 'Komunitas Wirahebat #Jayakayaraya',
+     qty: '75 Pcs',
+     material: 'Cotton Fleece Heavyweight 330 gsm + Furing Dacron',
+     print: 'Bordir Chenille Timbul + Patch Bendera Merah Putih'
+   },
+   {
+     id: 7,
+     title: 'Rompi Lapangan - FTG Universitas Padjadjaran',
+     category: 'Kemeja & Rompi',
+     image: '/images/RompiFakultas.jpeg',
+     client: 'Fakultas Teknik Geologi UNPAD',
+     qty: '140 Pcs',
+     material: 'Twill Drill Khaki + Multi-Pocket Fungsional',
+     print: 'Bordir Logo Identitas Fakultas & Angkatan'
+   },
+   {
+     id: 8,
+     title: 'Wearpack & Jaket Safety Proyek K3 - Reflector 3M',
+     category: 'Jaket & Safety',
+     image: '/images/JaketSafety.jpeg',
+     client: 'Kontraktor Migas & Pertambangan',
+     qty: '120 Set',
+     material: 'Ripstop Heavy-Duty + Scotlight 3M Reflektif',
+     print: 'Bordir K3 Safety First + Pita Reflektor Hi-Vis'
+   },
+   {
+     id: 9,
+     title: 'Jersey Printing Motif Batik - Modern Sublimation',
+     category: 'Polo & Jersey',
+     image: '/images/Jersey.jpeg',
+     client: 'Event Komunitas Budaya & Olahraga',
+     qty: '50 Set',
+     material: 'Dry-Fit Milano Anti-Bakteri & UV Guard',
+     print: 'Full Sublimation High-Resolution Heat Transfer'
+   }
+ ];
 
 export default function GaleriPage() {
   const [activeTab, setActiveTab] = useState('Semua');
+  const [selectedIdx, setSelectedIdx] = useState(null);
 
   const filtered = activeTab === 'Semua'
     ? PROJECTS
     : PROJECTS.filter((p) => p.category === activeTab);
+
+  const currentItem = selectedIdx !== null ? filtered[selectedIdx] : null;
 
   return (
     <div className="space-y-16 sm:space-y-20 py-12 sm:py-16">
@@ -121,7 +125,7 @@ export default function GaleriPage() {
               Galeri Karya &amp; Proyek Selesai
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Bukti nyata dedikasi dan kualitas pengerjaan Konveksi April. Telah dipercaya oleh ratusan brand distro, institusi korporat, komunitas motor, hingga event akbar nasional.
+              Bukti nyata dedikasi dan kualitas pengerjaan Konveksi April. Telah dipercaya oleh ratusan brand distro, institusi korporat, komunitas motor, hingga event akbar nasional. Klik pada gambar untuk melihat detail foto resolusi tinggi.
             </p>
           </div>
         </div>
@@ -134,7 +138,10 @@ export default function GaleriPage() {
           {GALLERY_CATEGORIES.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveTab(cat)}
+              onClick={() => {
+                setActiveTab(cat);
+                setSelectedIdx(null);
+              }}
               className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 activeTab === cat
                   ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30 scale-105'
@@ -148,7 +155,7 @@ export default function GaleriPage() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((item) => {
+          {filtered.map((item, index) => {
             const waQuery = encodeURIComponent(
               `Halo Konveksi April, saya melihat portofolio "${item.title}". Apakah bisa dibuatkan model serupa untuk pesanan kami?`
             );
@@ -158,24 +165,36 @@ export default function GaleriPage() {
                 key={item.id}
                 className="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5"
               >
-                {/* Photo container */}
-                <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden">
+                {/* Photo container with Pop-up trigger */}
+                <div
+                  onClick={() => setSelectedIdx(index)}
+                  className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden cursor-pointer group/photo"
+                  title="Klik untuk melihat foto lebih besar"
+                >
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="object-cover object-center group-hover/photo:scale-108 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
 
+                  {/* Zoom Overlay on Hover */}
+                  <div className="absolute inset-0 bg-indigo-950/40 opacity-0 group-hover/photo:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white font-bold text-xs sm:text-sm backdrop-blur-[2px]">
+                    <span className="p-2.5 rounded-full bg-white/20 backdrop-blur-md shadow-lg border border-white/30 flex items-center gap-1.5">
+                      <FaSearchPlus className="text-base text-amber-300" />
+                      <span>Lihat Foto Penuh</span>
+                    </span>
+                  </div>
+
                   {/* Category Pill */}
-                  <div className="absolute top-3 left-3 bg-indigo-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
+                  <div className="absolute top-3 left-3 bg-indigo-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow pointer-events-none">
                     {item.category}
                   </div>
 
                   {/* Qty Pill */}
-                  <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-slate-800 text-xs font-extrabold px-3 py-1 rounded-lg shadow">
+                  <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-slate-800 text-xs font-extrabold px-3 py-1 rounded-lg shadow pointer-events-none">
                     Total: {item.qty}
                   </div>
                 </div>
@@ -186,7 +205,10 @@ export default function GaleriPage() {
                     <span className="text-[11px] font-bold text-indigo-600 uppercase tracking-wide block mb-1">
                       Klien: {item.client}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors mb-3">
+                    <h3
+                      onClick={() => setSelectedIdx(index)}
+                      className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors mb-3 cursor-pointer"
+                    >
                       {item.title}
                     </h3>
 
@@ -217,6 +239,17 @@ export default function GaleriPage() {
           })}
         </div>
       </section>
+
+      {/* Image Pop-up Lightbox */}
+      <ImageLightbox
+        isOpen={selectedIdx !== null}
+        onClose={() => setSelectedIdx(null)}
+        item={currentItem}
+        onPrev={() => setSelectedIdx((prev) => (prev > 0 ? prev - 1 : filtered.length - 1))}
+        onNext={() => setSelectedIdx((prev) => (prev < filtered.length - 1 ? prev + 1 : 0))}
+        hasPrev={filtered.length > 1}
+        hasNext={filtered.length > 1}
+      />
 
       {/* 3. Bottom Callout */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
