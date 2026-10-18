@@ -3,21 +3,21 @@ import Script from 'next/script';
 import { Fragment } from 'react';
 
 // GANTI PLACHOLDER INI DENGAN ID GTM ASLI KLIEN ANDA (Contoh: 'GTM-ABCDEF1')
-const GTM_ID = 'G-JJ6445Q4LL'; 
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 const GTM = () => {
   // Hanya tampilkan GTM di mode produksi untuk menghindari script error saat development
   if (process.env.NODE_ENV !== 'production') {
     return null;
   }
-  
+
   return (
     <Fragment>
       {/* 1. Script GTM Utama (Diletakkan di dalam <head>) */}
       {/* strategy="afterInteractive" memastikan konten utama dimuat duluan */}
       <Script
         id="gtm-script"
-        strategy="afterInteractive" 
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -31,10 +31,10 @@ const GTM = () => {
 
       {/* 2. NoScript GTM (Diletakkan segera setelah tag <body> dibuka) */}
       <noscript>
-        <iframe 
+        <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-          height="0" 
-          width="0" 
+          height="0"
+          width="0"
           style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>
