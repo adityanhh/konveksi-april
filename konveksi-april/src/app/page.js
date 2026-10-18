@@ -127,7 +127,7 @@ export default function HomePage() {
             Pilihan Produk Terbaik
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-            Katalog Produk Konveksi Kami
+            Produk Yang Telah Kami Selesaikan
           </h2>
           <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
             Semua produk dijahit dengan pola proporsional, benang kuat, serta material kain pilihan terbaik yang nyaman dipakai beraktivitas sehari-hari.
