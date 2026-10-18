@@ -28,7 +28,14 @@ export const metadata = {
     title: 'Konveksi April Bandung - Vendor Konveksi & Sablon Custom Berkualitas',
     description:
       'Solusi produksi garmen custom terbaik di Bandung untuk brand distro, seragam kantor, event kampus, dan komunitas.',
-    siteName: 'Konveksi April Bandung',
+    url: 'https://konveksiapril.com/',
+    siteName: 'Konveksi April',
+    images: [{
+      url: '/og-image.jpeg', // Pastikan nama ini sama dengan file di folder public
+      width: 1200,
+      height: 630,
+      alt: 'Preview Konveksi April',
+    }]
     locale: 'id_ID',
     type: 'website',
   },
