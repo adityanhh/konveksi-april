@@ -15,7 +15,8 @@ import {
   FaTshirt,
   FaUsers,
   FaAward,
-  FaArrowRight
+  FaArrowRight,
+  FaTruck,
 } from 'react-icons/fa';
 
 const WHATSAPP_NUMBER = '6285122909300';
@@ -61,6 +62,10 @@ function HeroSection() {
             <div className="flex items-center gap-2">
               <FaShieldAlt className="text-indigo-400" />
               <span>Garansi Kualitas 100%</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaTruck className="text-orange-400" />
+              <span>Siap Kirim Seluruh Indonesia</span>
             </div>
           </div>
 

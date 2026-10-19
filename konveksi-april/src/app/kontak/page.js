@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: 'Bagaimana sistem pembayaran di Konveksi April?',
-    a: 'Sistem pembayaran menggunakan Down Payment (DP) sebesar 50% saat PO dan desain disetujui untuk memulai antrean produksi. Pelunasan 50% dilakukan saat pakaian selesai di-packing dan siap dikirim.'
+    a: 'Sistem pembayaran menggunakan Down Payment (DP) sebesar 25% saat PO dan desain disetujui untuk memulai antrean produksi. Pelunasan 75% dilakukan saat pakaian selesai di-packing dan siap dikirim.'
   }
 ];
 
@@ -127,7 +127,7 @@ export default function KontakPage() {
                 Workshop dan kantor pemasaran kami buka setiap hari kerja untuk kunjungan konsultasi langsung.
               </p>
               <div className="space-y-1 text-xs sm:text-sm text-slate-700 font-medium mb-6">
-                <div><strong>Senin - Sabtu:</strong> 09.00 - 19.30 WIB</div>
+                <div><strong>Senin - Sabtu:</strong> 09.00 - 21.00 WIB</div>
                 <div><strong>Minggu:</strong> Konfirmasi via WA</div>
               </div>
             </div>
@@ -178,9 +178,8 @@ export default function KontakPage() {
                 >
                   <span className="text-sm sm:text-base">{faq.q}</span>
                   <FaChevronDown
-                    className={`text-slate-400 text-xs transition-transform duration-200 flex-shrink-0 ${
-                      isOpen ? 'transform rotate-180 text-indigo-600' : ''
-                    }`}
+                    className={`text-slate-400 text-xs transition-transform duration-200 flex-shrink-0 ${isOpen ? 'transform rotate-180 text-indigo-600' : ''
+                      }`}
                   />
                 </button>
                 {isOpen && (
